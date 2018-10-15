@@ -2,7 +2,7 @@ author: "Alexey Karapetov <karapetov@gmail.com>"
 description: "Tesla API proxy."
 homepage: "https://github.com/f3ath/tesla-api"
 name: "tesla_proxy"
-version: "0.0.2"
+version: "0.0.3"
 executables:
   server: "server"
 dependencies:

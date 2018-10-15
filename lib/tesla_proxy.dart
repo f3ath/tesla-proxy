@@ -6,9 +6,6 @@ Middleware proxy(TokenResolver resolver, {Authenticator authenticator}) =>
     (handler) {
       authenticator ??= (_) => null;
       return (request) async {
-        if (request.method == 'POST') {
-          print(request.url.path == 'oath/token');
-        }
         final proxyToken = _extractToken(request);
         final user = await authenticator(proxyToken);
         final token = await resolver(user, request);
