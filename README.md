@@ -13,3 +13,6 @@ This is a PoC app inspired by this [Reddit thread](https://www.reddit.com/r/tesl
 ### With Docker
 - Build: `docker build -t proxy .`
 - Run: `docker run -e TESLA_TOKEN=<token> -d -p 8080:8080 proxy`
+
+## Using
+Once the server is running try opening [http://localhost:8080/api/1/vehicles](http://localhost:8080/api/1/vehicles).
