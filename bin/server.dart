@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:args/command_runner.dart';
 import 'package:shelf/shelf.dart' as shelf;
@@ -9,7 +10,7 @@ import 'package:tesla_proxy/tesla_proxy.dart' as tesla;
 void main(List<String> args) {
   CommandRunner('proxy', 'Tesla API proxy')
     ..addCommand(Run())
-    ..run(args);
+    ..run(['run'] + args);
 }
 
 class Run extends Command {
@@ -19,8 +20,9 @@ class Run extends Command {
   Run() {
     argParser.addOption('port',
         help: 'Proxy port', defaultsTo: '8080', callback: int.parse);
-    argParser.addOption('host', help: 'Proxy host', defaultsTo: 'localhost');
-    argParser.addOption('token', abbr: 't');
+    argParser.addOption('host', help: 'Proxy host', defaultsTo: '0.0.0.0');
+    argParser.addOption('token',
+        abbr: 't', defaultsTo: Platform.environment['TESLA_TOKEN']);
   }
 
   @override

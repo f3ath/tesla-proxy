@@ -2,9 +2,9 @@ author: "Alexey Karapetov <karapetov@gmail.com>"
 description: "Tesla API proxy."
 homepage: "https://github.com/f3ath/tesla-api"
 name: "tesla_proxy"
-version: "0.0.1"
+version: "0.0.2"
 executables:
-  proxy: "proxy.dart"
+  server: "server"
 dependencies:
   args: "^1.5.0"
   shelf_proxy: "^0.1.0"
